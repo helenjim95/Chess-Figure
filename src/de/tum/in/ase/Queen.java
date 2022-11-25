@@ -24,7 +24,7 @@ public class Queen extends ChessFigure implements DiagonalMover, StraightMover  
         } else {
 
             int steps = 0;
-            if (units % MAX_DISTANCE == 0) {
+            if (units % 2 == 0) {
                 steps = units / 2;
             } else {
                 steps = units / 2 + 1;
