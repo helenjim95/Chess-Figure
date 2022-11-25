@@ -19,14 +19,9 @@ public class Queen extends ChessFigure implements DiagonalMover, StraightMover  
 //     the figure should stay where it is without moving in any direction.
     @Override
     public void moveDiagonal(int units, String direction) {
-        if (units < 0) {
-            System.out.println("Units needs to be positive");
+        if (units < 1 || units > MAX_DISTANCE) {
+            return;
         } else {
-
-            if (units > MAX_DISTANCE) {
-                units = MAX_DISTANCE;
-            }
-
             switch (direction) {
                 case "SE":
 //                    x position increase, y position increase
