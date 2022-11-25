@@ -23,12 +23,16 @@ public class Queen extends ChessFigure implements DiagonalMover, StraightMover  
             System.out.println("Units needs to be positive");
         } else {
 
-            int steps = units / 2;
+            int steps = 0;
+            if (units % MAX_DISTANCE == 0) {
+                steps = units / 2;
+            } else {
+                steps = units / 2 + 1;
+            }
+
             if (steps > MAX_DISTANCE) {
                 steps = MAX_DISTANCE;
             }
-
-
 
             switch (direction) {
                 case "SE":
