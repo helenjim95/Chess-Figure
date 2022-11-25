@@ -30,37 +30,37 @@ public class Queen extends ChessFigure implements DiagonalMover, StraightMover  
             switch (direction) {
                 case "SE":
 //                    x position increase, y position increase
-                    if (this.getxPosition() + units < 8) {
+                    if (this.getxPosition() + units <= 7) {
                         this.setxPosition(this.getxPosition() + units);
                     }
-                    if (this.getyPosition() + units < 8) {
+                    if (this.getyPosition() + units <= 7) {
                         this.setyPosition(this.getyPosition() + units);
                     }
                     break;
                 case "SW":
 //                    x position decrease, y position increase
-                    if (this.getxPosition() - units < 0) {
+                    if (this.getxPosition() - units >= 0) {
                         this.setxPosition(this.getxPosition() - units);
                     }
-                    if (this.getyPosition() + units < 8) {
+                    if (this.getyPosition() + units <= 7) {
                         this.setyPosition(this.getyPosition() + units);
                     }
                     break;
                 case "NE":
 //                    x position increase, y position decrease
-                    if (this.getxPosition() + units < 8) {
+                    if (this.getxPosition() + units <= 7) {
                         this.setxPosition(this.getxPosition() + units);
                     }
-                    if (this.getyPosition() - units < 0) {
+                    if (this.getyPosition() - units >= 0) {
                         this.setyPosition(this.getyPosition() - units);
                     }
                     break;
                 case "NW":
 //                    x position decrease, y position decrease
-                    if (this.getxPosition() - units < 0) {
+                    if (this.getxPosition() - units >= 0) {
                         this.setxPosition(this.getxPosition() - units);
                     }
-                    if (this.getyPosition() - units < 0) {
+                    if (this.getyPosition() - units >= 0) {
                         this.setyPosition(this.getyPosition() - units);
                     }
                     break;

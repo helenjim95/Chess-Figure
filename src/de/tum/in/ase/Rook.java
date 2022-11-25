@@ -17,22 +17,22 @@ public class Rook extends ChessFigure implements StraightMover  {
         } else {
             switch (direction) {
                 case "E":
-                    if (this.getxPosition() + units < 8) {
+                    if (this.getxPosition() + units <= 7) {
                         this.setxPosition(this.getxPosition() + units);
                     }
                     break;
                 case "W":
-                    if (this.getxPosition() - units < 0) {
+                    if (this.getxPosition() - units >= 0) {
                         this.setxPosition(this.getxPosition() - units);
                     }
                     break;
                 case "N":
-                    if (this.getyPosition() - units < 0) {
+                    if (this.getyPosition() - units >= 0) {
                         this.setyPosition(this.getyPosition() - units);
                     }
                     break;
                 case "S":
-                    if (this.getyPosition() + units < 8) {
+                    if (this.getyPosition() + units <= 7) {
                         this.setyPosition(this.getyPosition() + units);
                     }
                     break;
