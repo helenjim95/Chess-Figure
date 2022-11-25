@@ -1,24 +1,24 @@
 package de.tum.in.ase;
 
 public abstract class ChessFigure {
-    private String color;
+    private String colour;
     private String material;
     private int xPosition;
     private int yPosition;
 
-    public ChessFigure(String color, String material, int xPosition, int yPosition) {
-        this.color = color;
+    public ChessFigure(String colour, String material, int xPosition, int yPosition) {
+        this.colour = colour;
         this.material = material;
         this.xPosition = xPosition;
         this.yPosition = yPosition;
     }
 
-    public String getColor() {
-        return color;
+    public String getColour() {
+        return colour;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setColour(String colour) {
+        this.colour = colour;
     }
 
     public String getMaterial() {
