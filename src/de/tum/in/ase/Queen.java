@@ -23,8 +23,8 @@ public class Queen extends ChessFigure implements DiagonalMover, StraightMover  
             System.out.println("Units needs to be positive");
         } else {
 
-            if (units > 3) {
-                units = 3;
+            if (units > MAX_DISTANCE * 2) {
+                units = MAX_DISTANCE * 2;
             }
 
             switch (direction) {
@@ -73,8 +73,8 @@ public class Queen extends ChessFigure implements DiagonalMover, StraightMover  
             System.out.println("Units needs to be positive");
         } else {
 
-            if (units > 3) {
-                units = 3;
+            if (units > MAX_DISTANCE) {
+                units = MAX_DISTANCE;
             }
 
             switch (direction) {
