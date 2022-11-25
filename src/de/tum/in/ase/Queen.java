@@ -13,8 +13,8 @@ public class Queen extends ChessFigure implements DiagonalMover, StraightMover  
     }
 
 //     Four possible directions are now: SE, SW, NE, NW,
-//     If a figure steps 3 to NE ->  x position  increase by 3 units,  y position decrease by 3 units;
-//     If a figure steps 3 to SW -> x position decrease by 3 units and y position increase by 3 units.
+//     If a figure units 3 to NE ->  x position  increase by 3 units,  y position decrease by 3 units;
+//     If a figure units 3 to SW -> x position decrease by 3 units and y position increase by 3 units.
 //     If the figure would exceed the chess board with the input units,
 //     the figure should stay where it is without moving in any direction.
     @Override
@@ -23,44 +23,37 @@ public class Queen extends ChessFigure implements DiagonalMover, StraightMover  
             System.out.println("Units needs to be positive");
         } else {
 
-            int steps = 0;
-            if (units % 2 == 0) {
-                steps = units / 2;
-            } else {
-                steps = units / 2 + 1;
-            }
-
-            if (steps > MAX_DISTANCE) {
-                steps = MAX_DISTANCE;
+            if (units > MAX_DISTANCE * 2) {
+                units = MAX_DISTANCE * 2;
             }
 
             switch (direction) {
                 case "SE":
 //                    x position increase, y position increase
-                    if (this.getxPosition() + steps <= 7 && this.getyPosition() + steps <= 7) {
-                        this.setxPosition(this.getxPosition() + steps);
-                        this.setyPosition(this.getyPosition() + steps);
+                    if (this.getxPosition() + units <= 7 && this.getyPosition() + units <= 7) {
+                        this.setxPosition(this.getxPosition() + units);
+                        this.setyPosition(this.getyPosition() + units);
                     }
                     break;
                 case "SW":
 //                    x position decrease, y position increase
-                    if (this.getxPosition() - steps >= 0 && this.getyPosition() + steps <= 7) {
-                        this.setxPosition(this.getxPosition() - steps);
-                        this.setyPosition(this.getyPosition() + steps);
+                    if (this.getxPosition() - units >= 0 && this.getyPosition() + units <= 7) {
+                        this.setxPosition(this.getxPosition() - units);
+                        this.setyPosition(this.getyPosition() + units);
                     }
                     break;
                 case "NE":
 //                    x position increase, y position decrease
-                    if (this.getxPosition() + steps <= 7 && this.getyPosition() - steps >= 0) {
-                        this.setxPosition(this.getxPosition() + steps);
-                        this.setyPosition(this.getyPosition() - steps);
+                    if (this.getxPosition() + units <= 7 && this.getyPosition() - units >= 0) {
+                        this.setxPosition(this.getxPosition() + units);
+                        this.setyPosition(this.getyPosition() - units);
                     }
                     break;
                 case "NW":
 //                    x position decrease, y position decrease
-                    if (this.getxPosition() - steps >= 0 && this.getyPosition() - steps >= 0) {
-                        this.setxPosition(this.getxPosition() - steps);
-                        this.setyPosition(this.getyPosition() - steps);
+                    if (this.getxPosition() - units >= 0 && this.getyPosition() - units >= 0) {
+                        this.setxPosition(this.getxPosition() - units);
+                        this.setyPosition(this.getyPosition() - units);
                     }
                     break;
             }
@@ -70,7 +63,7 @@ public class Queen extends ChessFigure implements DiagonalMover, StraightMover  
 
 //    to get the accurate position, you need to check the direction.
 //    There are four possible directions: E, W, N, S, standing for East, West, North, and South.
-//    If a figure steps 3 to east, it means the x position will increase by 3 units and the y position remains.
+//    If a figure units 3 to east, it means the x position will increase by 3 units and the y position remains.
 //    If the figure would exceed the chess board with the input units,
 //    the figure should stay where it is without moving in any direction.
     @Override
