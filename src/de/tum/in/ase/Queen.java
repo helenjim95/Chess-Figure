@@ -23,37 +23,40 @@ public class Queen extends ChessFigure implements DiagonalMover, StraightMover  
             System.out.println("Units needs to be positive");
         } else {
 
-            if (units > MAX_DISTANCE * 2) {
-                units = MAX_DISTANCE * 2;
+            int steps = units / 2;
+            if (steps > MAX_DISTANCE) {
+                steps = MAX_DISTANCE;
             }
+
+
 
             switch (direction) {
                 case "SE":
 //                    x position increase, y position increase
-                    if (this.getxPosition() + units <= 7 && this.getyPosition() + units <= 7) {
-                        this.setxPosition(this.getxPosition() + units);
-                        this.setyPosition(this.getyPosition() + units);
+                    if (this.getxPosition() + steps <= 7 && this.getyPosition() + steps <= 7) {
+                        this.setxPosition(this.getxPosition() + steps);
+                        this.setyPosition(this.getyPosition() + steps);
                     }
                     break;
                 case "SW":
 //                    x position decrease, y position increase
-                    if (this.getxPosition() - units >= 0 && this.getyPosition() + units <= 7) {
-                        this.setxPosition(this.getxPosition() - units);
-                        this.setyPosition(this.getyPosition() + units);
+                    if (this.getxPosition() - steps >= 0 && this.getyPosition() + steps <= 7) {
+                        this.setxPosition(this.getxPosition() - steps);
+                        this.setyPosition(this.getyPosition() + steps);
                     }
                     break;
                 case "NE":
 //                    x position increase, y position decrease
-                    if (this.getxPosition() + units <= 7 && this.getyPosition() - units >= 0) {
-                        this.setxPosition(this.getxPosition() + units);
-                        this.setyPosition(this.getyPosition() - units);
+                    if (this.getxPosition() + steps <= 7 && this.getyPosition() - steps >= 0) {
+                        this.setxPosition(this.getxPosition() + steps);
+                        this.setyPosition(this.getyPosition() - steps);
                     }
                     break;
                 case "NW":
 //                    x position decrease, y position decrease
-                    if (this.getxPosition() - units >= 0 && this.getyPosition() - units >= 0) {
-                        this.setxPosition(this.getxPosition() - units);
-                        this.setyPosition(this.getyPosition() - units);
+                    if (this.getxPosition() - steps >= 0 && this.getyPosition() - steps >= 0) {
+                        this.setxPosition(this.getxPosition() - steps);
+                        this.setyPosition(this.getyPosition() - steps);
                     }
                     break;
             }
